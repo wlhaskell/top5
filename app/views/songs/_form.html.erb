@@ -18,8 +18,7 @@
     <%= f.select :rating, %w(1 2 3 4 5 6 7 8 9 10), {:include_blank => 'Rating'}, class: "form-control" %>
   </div>
   <div class="form-group">
-      <%= f.select(:artist_id, @artists.collect {|a| [ a.name, a.id ] }, {:include_blank => 
-  'Please select an artist'}, class: "form-control") %>
+      <%= f.select(:artist_id, @artists.collect {|a| [ a.name, a.id ] }, {:include_blank => 'Please select an artist'}, class: "form-control") %>
   </div>
   <div class="actions">
     <%= f.submit class: "form-control"%>
