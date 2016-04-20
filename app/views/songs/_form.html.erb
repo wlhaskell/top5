@@ -11,19 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, placeholder: "Song Name" %>
+  <div class="form-group">
+    <%= f.text_field :name, placeholder: "Song Name", class: "form-control" %>
   </div>
-  <div class="field" id="black-text">
-    <%= f.label :rating %><br>
-    <%= f.select :rating, %w(1 2 3 4 5 6 7 8 9 10), {:include_blank => 'Rating'} %>
+  <div class="form-group">
+    <%= f.select :rating, %w(1 2 3 4 5 6 7 8 9 10), {:include_blank => 'Rating'}, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.select(:artist_id, @artists.collect {|a| [ a.name, a.id ] }, {:include_blank => 
-'Please select an artist'}) %>
+  <div class="form-group">
+      <%= f.select(:artist_id, @artists.collect {|a| [ a.name, a.id ] }, {:include_blank => 
+  'Please select an artist'}, class: "form-control") %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "form-control"%>
   </div>
 <% end %>

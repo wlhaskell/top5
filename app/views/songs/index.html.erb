@@ -9,7 +9,7 @@
   <div class = "row">
     <% @songs.each do |song| %>
      <div class="col-md-6">
-        <div class = "well">
+        <div class = "well box-well">
           <h2><%= link_to song.name, song %></h2>
           <h3 id="artist-name"><%= song.artist.name %></h3>
           <p>

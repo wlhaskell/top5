@@ -1,9 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
-</p>
 
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="well">
+      <h2><%= @artist.name %></h2>
+      <%= link_to edit_artist_path(@artist) do %>
+        <i class="fa fa-scissors" aria-hidden="ture"></i>Edit
+      <% end %>
+      <%= link_to @artist, method: :delete, data: { confirm: 'Are you sure?' } do%>
+        <i class="fa fa-trash-o" aria-hidden="true"></i>Destroy
+      <% end %>
+    </div>
+  </div>
+</div>
+<% @artist.songs.each do |song| %>
+	<div class="row">
+		<div class="col-md-12">
+			<div class = "well list-well">
+				<h3><%= song.name %></h3>
+			</div>
+		</div>
+	</div>
+<% end %>
+
 <%= link_to 'Back', artists_path %>
