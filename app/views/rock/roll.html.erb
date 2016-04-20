@@ -1,19 +1,28 @@
-<h1>Top 5</h1>
+<h1>Top 5 Songs</h1>
 
   <div class = "row">
-    <% @songs.each do |song| %>
+    <% @songs.each_with_index do |song, i| %>
      <div class="col-md-12">
         <div class = "well">
-          <h2><%= link_to song.name, song %></h2>
-          <h3><%= song.artist.name %></h3>
-          <p>
-            <% song.rating.to_i.times do %>
-              <i class="fa fa-star yellow" aria-hidden="true"></i>
-            <% end %>
-            <% (10 - song.rating.to_i).times do %>
-              <i class="fa fa-star" aria-hidden="true"></i>
-            <% end %>
-          </p>
+          <div class = "row">
+            <div class = "col-md-1">
+              <div class="top">
+                <%= i + 1 %>
+              </div>
+            </div>  
+            <div class = "col-md-11">            
+              <h2><%= link_to song.name, song %></h2>
+              <h3><%= song.artist.name %></h3>
+              <p>
+                <% song.rating.to_i.times do %>
+                  <i class="fa fa-star yellow" aria-hidden="true"></i>
+                <% end %>
+                <% (10 - song.rating.to_i).times do %>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                <% end %>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     <% end %>

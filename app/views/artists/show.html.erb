@@ -15,6 +15,9 @@
 	      	<% end %>
 	      <% end %>
 	     </p>
+	    <%= link_to new_song_path(id: @artist.id) do %>
+  			<i class="fa fa-plus-circle" aria-hidden="true"></i>New Song
+			<% end %>
       <%= link_to edit_artist_path(@artist) do %>
         <i class="fa fa-scissors" aria-hidden="ture"></i>Edit
       <% end %>

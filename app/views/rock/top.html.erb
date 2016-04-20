@@ -1,0 +1,36 @@
+<h1>Top 5 Artists</h1>
+
+<%= link_to new_artist_path do %>
+  <i class="fa fa-plus-circle" aria-hidden="true"></i>New Artist
+<% end %>
+
+  <div class="row">
+    <% @artists.each_with_index do |artist,i| %>
+      <div class="col-md-12">
+        <div class="well">
+          <div class = "row">
+            <div class = "col-md-1">
+              <div class="top">
+                <%= i + 1 %>                      
+              </div>
+            </div>
+            <div class = "col-md-11">
+              <h2><%= artist.name %></h2>
+                <p>
+                  <% 10.times do |i|%>
+                    <% if i < artist.rating.to_i %>
+                      <i class="fa fa-star yellow" aria-hidden="true"></i>
+                    <% else %>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    <% end %>
+                  <% end %>
+                </p>
+              <%= link_to artist do %>
+                Show
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
