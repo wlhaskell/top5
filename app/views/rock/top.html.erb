@@ -16,6 +16,7 @@
             </div>
             <div class = "col-md-11">
               <h2><%= artist.name %></h2>
+              <%= image_tag artist.photo.url, class:"photo" %>
                 <p>
                   <% 10.times do |i|%>
                     <% if i < artist.rating.to_i %>
